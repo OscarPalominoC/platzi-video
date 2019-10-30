@@ -1,0 +1,336 @@
+/* iconos */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?kjpju0');
+    src:  url('fonts/icomoon.eot?kjpju0#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?kjpju0') format('truetype'),
+      url('fonts/icomoon.woff?kjpju0') format('woff'),
+      url('fonts/icomoon.svg?kjpju0#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-cloud-download:before {
+    content: "\e9c2";
+  }
+  .icon-share:before {
+    content: "\ea7d";
+  }
+/* Etiquetas */  
+body{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    /* font-size: 16px; */
+}
+h1{
+    margin-top: 0;
+    color: white;
+    font-size: 2.5em;
+}
+h2{
+    padding-left: 20px;
+    font-size: 1.2em;
+    margin-bottom: 0;
+    text-align: justify;
+
+}
+strong{
+    background: -webkit-linear-gradient(yellow,red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: tomato;
+}
+a{
+    /* color: white; */
+    text-decoration: none;
+}
+/* Definiendo al Contenedor */
+.container{
+    display: grid;
+    width: 100%;
+    grid-template: .1fr 120px 1fr 50px / 25% 45% 30%;
+    grid-template-areas:    "playlist cover-song cover-song"
+                            "playlist details details"
+                            "playlist comments suggest"
+                            "footer footer footer";
+    
+    margin: 0;
+}
+/* Sección Playlist */
+.playlist{
+    grid-area: playlist;
+    background: #151b31;
+    padding: 20px;
+    color: white;
+}
+.playlist a{
+    color: white;
+}
+body > div > section.playlist > ol > li{
+/* .list ol li{ */
+    margin: 10px 0;
+}
+.friends-list{
+    padding-top: 30px;
+}
+.friends{
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-auto-columns: 40px 1fr;
+
+}
+.friends-image{
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.friends-img{
+    max-width: 100%;
+}
+.friends-name{
+    padding-left: 20px;
+}
+/* Sección Cover */
+.cover{
+    grid-area: cover-song;/* 
+    border: 1px solid red; */
+    width: 100%;
+    height: 0;
+    /* height: 56,25%; */
+    /* margin: auto; */
+    padding-top: 46.25%;
+    position: relative;
+    /* margin-bottom: 15px; */
+}
+.video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /* margin: auto; */
+}
+
+/* Sección Detalles */
+.details{
+    grid-area: details;
+    padding-left: 30px;
+    color: black;
+}
+.song-name{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.views{
+    font-weight: normal;
+    color: rgba(0, 0, 0, .6);
+    font-size: .8em;
+}
+.details-buttons a{
+    color: black;
+}
+.details-buttons{
+    display: grid;
+    grid-template-columns: 40% 50%;
+    grid-template-areas: "left right";
+    grid-gap: 10px;
+}
+.details-buttons a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+.left-buttons{
+    grid-area: left;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.icon-share, .icon-cloud-download{
+    text-align: center;
+    font-size: 1em;
+}
+.btn{
+    border-radius: 20px;
+    border: 0;
+    width: 100%;
+    color: white;
+}
+.add{
+    background: rgb(63,249,191);
+    background: linear-gradient(90deg, rgba(63,249,191,1) 0%, rgba(62,210,222,1) 35%, rgba(50,115,187,1) 100%);
+}
+.cat1{
+    background: #70d6fc;
+}
+.cat2{
+    background: #4435fd;
+}
+.cat3{
+    background: #00ae00;
+}
+.cat4{
+    background: #d1070d;
+}
+.btn-details{
+    font-size: .7em;
+}
+.right-buttons{
+    grid-area: right;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 10px;
+}
+/* Sección Comentarios */
+.comments{
+    grid-area: comments;
+    display: grid;
+    grid-template-rows: 120px 1fr;
+    grid-template-areas: "add-comments" "commentarios";
+    width: 100%;
+    margin: 0 auto;
+    
+}
+.add-comment{
+    grid-area: add-comments;
+    text-align: center;
+}
+.box-comment{
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-areas: "profile addComment";
+    margin: auto;
+    margin-left: 10px;
+}
+.profile{
+    grid-area: profile;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px;
+
+}
+.profile-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#adding-comment{
+    grid-area: addComment;
+    width: 90%;
+    height: 50px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .3);    
+}
+.comment{
+    grid-area: commentarios;
+    grid-auto-rows: minmax(40px, 1fr);
+}
+.user-comment{
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    grid-template-areas:    "usuario"
+                            "comentario";
+    margin-left: 15px;
+}
+.name{
+    grid-area: usuario;
+}
+/* .name h4{
+    margin: 0;
+} */
+.user-comment p{
+    grid-area: comentario;
+    margin-top: 0;
+}
+/* Sección sugerencias */
+.sugerencias{
+    grid-area: suggest;
+    
+}
+.box-sugerencias{
+    display: grid;
+    grid-template-rows: repeat(3, 230px);
+}
+.box-video{
+    display: grid;
+    grid-auto-rows: 190px 30px;
+    grid-template-areas: "video" "descripcion";
+}
+.video-sugerencia{
+    grid-area: video;
+    height: 0;
+    width: 90%;
+    position: relative;
+    padding-top: 48%;
+    margin: auto;
+}
+.video-suggest{
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.descripcion{
+    grid-area: descripcion;
+}
+.descripcion p{
+    margin: auto;
+    padding-left: 20px;
+}
+/* Sección footer */
+.footer{
+    grid-area: footer;
+    width: 100%;
+    background: #151b31;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    align-content: center;
+}
+.footer p{
+    color: white;
+}
+.footer p a{
+    color: white;
+    
+}
+.footer-link{
+    display: flex;
+}
+.footer-img{
+    margin: auto;
+}
